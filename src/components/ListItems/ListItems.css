@@ -1,0 +1,29 @@
+.list-items {
+    width: 100%;
+    height: 100%;
+    margin: 0.5em;
+    padding: 0.5em;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.list-items > h4 {
+    margin: 0.5em;
+}
+
+.list-items__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    gap: 10px;
+    flex: 1;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.list-items__grid > span {
+    font-family: var(--ff-primary);
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}

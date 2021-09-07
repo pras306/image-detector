@@ -1,0 +1,20 @@
+.image-card {
+    width: 100%;
+    height: 40vh;
+    margin: 0.5em;
+    padding: 0.5em;
+    position: relative;
+}
+
+.image-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.image-card__bounding-box {
+    position: absolute;
+    box-shadow: inset 0 0 0 3px var(--bc-primary);
+    flex-wrap: wrap;
+    justify-content: center;    
+}
