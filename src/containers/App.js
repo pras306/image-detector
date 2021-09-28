@@ -6,18 +6,22 @@ import './App.css';
 import SearchBar from '../components/SearchBar/SearchBar';
 import ImageCard from '../components/ImageCard/ImageCard';
 import ListItems from '../components/ListItems/ListItems';
+import Loader from '../components/Loader/Loader';
 import { CLARIFAI_BASE_URL, CLARIFAI_MODELS } from '../apis/requests';
 
 const App = () => {
   const [imageSrc, setImageSrc] = useState('');
   const [box, setBox] = useState({});
   const [listItems, setListItems] = useState([]);
+  const [loader, setLoader] = useState(false);
 
   const onSearch = async (term) => {
+    setLoader(true);
     let response = await axios.post(CLARIFAI_BASE_URL + CLARIFAI_MODELS.faceModel, {
       term: term
     });
-
+    
+    setLoader(false);
     setImageSrc(term);
     let width = document.getElementById("inputImage").width;
     let height = document.getElementById("inputImage").height;
@@ -28,7 +32,9 @@ const App = () => {
       bottom_row: height - (height * response.data.bottom_row)
     });
 
+    setLoader(true);
     findClosestCelebrity(term);
+    setLoader(false);
   }
 
   const findClosestCelebrity = async (term) => {
@@ -60,17 +66,29 @@ const App = () => {
     }  
   };
 
+  const renderPage = () => {
+    if(loader) {
+      return <Loader />
+    } else {
+      return(
+        <React.Fragment>
+          <div className="app__body__searchbar">
+            <SearchBar onSearchSubmit={onSearch} />
+          </div>
+          <div className="app__body__container">
+            <ImageCard src={imageSrc} box={box} />
+            <ListItems items={listItems} />
+          </div>
+        </React.Fragment>
+      )
+    }
+  }
+
   return (
     <div className="app">
       <Particles className='app__particles' params={ particleOptions} />
       <div className="app__body">
-        <div className="app__body__searchbar">
-          <SearchBar onSearchSubmit={onSearch} />
-        </div>
-        <div className="app__body__container">
-          <ImageCard src={imageSrc} box={box} />
-          <ListItems items={listItems} />
-        </div>
+        { renderPage() }
       </div>
     </div>
   );
