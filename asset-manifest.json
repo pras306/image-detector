@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/image-detector/static/css/main.51092c7d.chunk.css",
-    "main.js": "/image-detector/static/js/main.0ed8e822.chunk.js",
-    "main.js.map": "/image-detector/static/js/main.0ed8e822.chunk.js.map",
+    "main.css": "/image-detector/static/css/main.37a8fa7e.chunk.css",
+    "main.js": "/image-detector/static/js/main.dc9bfeb7.chunk.js",
+    "main.js.map": "/image-detector/static/js/main.dc9bfeb7.chunk.js.map",
     "runtime-main.js": "/image-detector/static/js/runtime-main.4a1b959f.js",
     "runtime-main.js.map": "/image-detector/static/js/runtime-main.4a1b959f.js.map",
     "static/js/2.bda96053.chunk.js": "/image-detector/static/js/2.bda96053.chunk.js",
     "static/js/2.bda96053.chunk.js.map": "/image-detector/static/js/2.bda96053.chunk.js.map",
     "index.html": "/image-detector/index.html",
-    "static/css/main.51092c7d.chunk.css.map": "/image-detector/static/css/main.51092c7d.chunk.css.map",
+    "static/css/main.37a8fa7e.chunk.css.map": "/image-detector/static/css/main.37a8fa7e.chunk.css.map",
     "static/js/2.bda96053.chunk.js.LICENSE.txt": "/image-detector/static/js/2.bda96053.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4a1b959f.js",
     "static/js/2.bda96053.chunk.js",
-    "static/css/main.51092c7d.chunk.css",
-    "static/js/main.0ed8e822.chunk.js"
+    "static/css/main.37a8fa7e.chunk.css",
+    "static/js/main.dc9bfeb7.chunk.js"
   ]
 }
