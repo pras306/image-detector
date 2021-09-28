@@ -1,9 +1,11 @@
 .image-card {
     width: 100%;
-    height: 40vh;
+    height: 100%;
     margin: 0.5em;
     padding: 0.5em;
     position: relative;
+    background: white;
+    border-radius: 20px;
 }
 
 .image-card__image {

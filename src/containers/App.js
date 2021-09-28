@@ -18,7 +18,6 @@ const App = () => {
       term: term
     });
 
-    console.log(response);
     setImageSrc(term);
     let width = document.getElementById("inputImage").width;
     let height = document.getElementById("inputImage").height;
@@ -37,7 +36,6 @@ const App = () => {
       term: term
     });
 
-    console.log(response);
     setListItems(response.data);
   }
 
@@ -65,12 +63,14 @@ const App = () => {
   return (
     <div className="app">
       <Particles className='app__particles' params={ particleOptions} />
-      <div className="app__container">
-        <SearchBar onSearchSubmit={onSearch} />
-        <ImageCard src={imageSrc} box={box} />
-      </div>
-      <div className="app__container">
-        <ListItems items={listItems} />
+      <div className="app__body">
+        <div className="app__body__searchbar">
+          <SearchBar onSearchSubmit={onSearch} />
+        </div>
+        <div className="app__body__container">
+          <ImageCard src={imageSrc} box={box} />
+          <ListItems items={listItems} />
+        </div>
       </div>
     </div>
   );
