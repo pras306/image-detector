@@ -16,25 +16,33 @@ const App = () => {
   const [loader, setLoader] = useState(false);
 
   const onSearch = async (term) => {
-    setLoader(true);
-    let response = await axios.post(CLARIFAI_BASE_URL + CLARIFAI_MODELS.faceModel, {
-      term: term
-    });
-    
-    setLoader(false);
-    setImageSrc(term);
-    let width = document.getElementById("inputImage").width;
-    let height = document.getElementById("inputImage").height;
-    setBox({
-      top_row: height * response.data.top_row,
-      left_col: width * response.data.left_col,
-      right_col: width - (width * response.data.right_col),
-      bottom_row: height - (height * response.data.bottom_row)
-    });
+    try {
+      setLoader(true);
+      let response = await axios.post(CLARIFAI_BASE_URL + CLARIFAI_MODELS.faceModel, {
+        term: term
+      });
+      
+      if(response.data.Error) {
+        throw new Error(response.data.Error);
+      }
+      setLoader(false);
+      setImageSrc(term);
+      let width = document.getElementById("inputImage").width;
+      let height = document.getElementById("inputImage").height;
+      setBox({
+        top_row: height * response.data.top_row,
+        left_col: width * response.data.left_col,
+        right_col: width - (width * response.data.right_col),
+        bottom_row: height - (height * response.data.bottom_row)
+      });
 
-    setLoader(true);
-    findClosestCelebrity(term);
-    setLoader(false);
+      setLoader(true);
+      findClosestCelebrity(term);
+      setLoader(false);
+    } catch(err) {
+      alert(err.message);
+      setLoader(false);
+    }
   }
 
   const findClosestCelebrity = async (term) => {
