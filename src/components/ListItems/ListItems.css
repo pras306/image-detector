@@ -4,7 +4,7 @@
     margin: 0.5em;
     padding: 0.5em;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     justify-content: flex-start;
     align-items: center;
     background: white;
@@ -26,4 +26,18 @@
     font-family: var(--ff-primary);
     font-size: 0.8rem;
     text-transform: capitalize;
+}
+
+@media screen and (max-width: 500px) {
+    .list-items {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .list-items {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
 }

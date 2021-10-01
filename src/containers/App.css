@@ -46,6 +46,31 @@
   z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: center;
   margin: 1.5em;
+}
+
+@media screen and (max-width: 768px) {
+  .app__body__container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .app__body__container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .app__body__container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .app__body__container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .app__body__container::-webkit-scrollbar {
+    display: none;
+  }
 }
