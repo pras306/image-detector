@@ -59,12 +59,12 @@ Start the server
 ## API References
 
 - [Clarifai API](https://www.clarifai.com/)
-- [Custom Proxy Server for hiding API key](https://backend-portfolio-proxy.herokuapp.com)
+- Custom Proxy Server for hiding API key - [https://backend-portfolio-proxy.herokuapp.com/api/v1](https://backend-portfolio-proxy.herokuapp.com/api/v1)
 
 #### POST - Detect Face
 
 ```http
-  POST /api/v1/images/detect/face
+  POST /images/detect/face
 ```
 
 |Request Body | Type     | Description                                       |
@@ -75,7 +75,7 @@ Start the server
 #### POST - Find Closest Celebrity Match
 
 ```http
-  POST /api/v1/images/detect/celebrity
+  POST /images/detect/celebrity
 ```
 
 |Request Body | Type     | Description                                       |
